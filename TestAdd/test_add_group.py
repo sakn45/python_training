@@ -6,10 +6,11 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest, time, re
+ 
 
 class A(unittest.TestCase):
     def setUp(self):
-        self.wd = webdriver.Chrome(executable_path=r'')
+        self.wd = webdriver.Chrome()
         self.wd.implicitly_wait(30)
 
     
@@ -17,7 +18,11 @@ class A(unittest.TestCase):
         wd = self.wd
         wd.get("http://127.0.0.1/addressbook/")
         wd.find_element_by_name("user").click()
+        wd.find_element_by_name("user").clear()
+        wd.find_element_by_name("user").send_keys("admin")
         wd.find_element_by_name("pass").click()
+        wd.find_element_by_name("pass").clear()
+        wd.find_element_by_name("pass").send_keys("secret")
         wd.find_element_by_xpath("//input[@value='Login']").click()
         wd.find_element_by_link_text("groups").click()
         wd.find_element_by_name("new").click()

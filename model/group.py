@@ -5,4 +5,3 @@ class Group:
         self.footer = footer
 
 
-

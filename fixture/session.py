@@ -26,7 +26,7 @@ class SessionHelper:
 
     def is_logged_in_as(self, username):
         wd = self.app.wd
-        return
+        return wd.find_element_by_id("top").text == "("+username+")"
 
     def ensure_logout(self):
         wd = self.app.wd

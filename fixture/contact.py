@@ -3,7 +3,6 @@ from selenium.webdriver.support.ui import Select
 from model.contact import Contact
 
 
-
 class ContactHelper:
     def __init__(self, app):
         self.app = app
@@ -23,32 +22,32 @@ class ContactHelper:
         wd.find_element_by_xpath("//div[@id='content']/form/input[21]").click()
         self.contact_cache = None
 
-    def fill_contact_form(self, contacts):
+    def fill_contact_form(self, contact):
         wd = self.app.wd
-        self.change_fieled_value("firstname", contacts.firstname)
-        self.change_fieled_value("middlename", contacts.middlename)
-        self.change_fieled_value("lastname", contacts.lastname)
-        self.change_fieled_value("nickname", contacts.nickname)
-        self.change_fieled_value("title", contacts.title)
-        self.change_fieled_value("company", contacts.company)
-        self.change_fieled_value("address", contacts.address)
-        self.change_fieled_value("home", contacts.home_number)
-        self.change_fieled_value("mobile", contacts.mobile_number)
-        self.change_fieled_value("work", contacts.work_number)
-        self.change_fieled_value("fax", contacts.fax)
-        self.change_fieled_value("email", contacts.email)
-        self.change_fieled_value("email2", contacts.email2)
-        self.change_fieled_value("email3", contacts.email3)
-        self.change_fieled_value("homepage", contacts.homepage)
-        self.change_fieled1_value("bday", contacts.bday)
-        self.change_fieled1_value("bmonth", contacts.bmonth)
-        self.change_fieled_value("byear", contacts.byear)
-        self.change_fieled1_value("aday", contacts.aday)
-        self.change_fieled1_value("amonth", contacts.amonth)
-        self.change_fieled_value("ayear", contacts.ayear)
-        self.change_fieled_value("address2", contacts.address2)
-        self.change_fieled_value("phone2", contacts.phone2)
-        self.change_fieled_value("notes", contacts.notes)
+        self.change_fieled_value("firstname", contact.firstname)
+        self.change_fieled_value("middlename", contact.middlename)
+        self.change_fieled_value("lastname", contact.lastname)
+        self.change_fieled_value("nickname", contact.nickname)
+        self.change_fieled_value("title", contact.title)
+        self.change_fieled_value("company", contact.company)
+        self.change_fieled_value("address", contact.address)
+        self.change_fieled_value("home", contact.home_number)
+        self.change_fieled_value("mobile", contact.mobile_number)
+        self.change_fieled_value("work", contact.work_number)
+        self.change_fieled_value("fax", contact.fax)
+        self.change_fieled_value("email", contact.email)
+        self.change_fieled_value("email2", contact.email2)
+        self.change_fieled_value("email3", contact.email3)
+        self.change_fieled_value("homepage", contact.homepage)
+        self.change_fieled1_value("bday", contact.bday)
+        self.change_fieled1_value("bmonth", contact.bmonth)
+        self.change_fieled_value("byear", contact.byear)
+        self.change_fieled1_value("aday", contact.aday)
+        self.change_fieled1_value("amonth", contact.amonth)
+        self.change_fieled_value("ayear", contact.ayear)
+        self.change_fieled_value("address2", contact.address2)
+        self.change_fieled_value("phone2", contact.phone2)
+        self.change_fieled_value("notes", contact.notes)
 
     def change_fieled_value(self, field_name, text):
         wd = self.app.wd
@@ -148,3 +147,5 @@ class ContactHelper:
         raw = wd.find_elements_by_name("entry")[index]
         cell = raw.find_elements_by_tag_name("td")[6]
         cell.find_element_by_tag_name("a").click()
+
+

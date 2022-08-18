@@ -43,3 +43,4 @@ class Contact:
         else:
             return maxsize
 
+

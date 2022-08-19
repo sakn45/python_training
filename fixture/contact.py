@@ -1,6 +1,7 @@
 
 from selenium.webdriver.support.ui import Select
 from model.contact import Contact
+import re
 
 
 class ContactHelper:
@@ -147,5 +148,19 @@ class ContactHelper:
         raw = wd.find_elements_by_name("entry")[index]
         cell = raw.find_elements_by_tag_name("td")[6]
         cell.find_element_by_tag_name("a").click()
+
+    def get_contact_from_view_page(self, index):
+        wd = self.app.wd
+        self.open_contact_view_by_index(index)
+        text = wd.find_element_by_id("content").text
+        home_number = re.search("H: (.*)", text).group(1)
+        work_number = re.search("W: (.*)", text).group(1)
+        mobile_number = re.search("M: (.*)", text).group(1)
+        phone2 = re.search("P: (.*)", text).group(1)
+        return Contact(home_number=home_number, mobile_number=mobile_number,
+                       work_number=work_number, phone2=phone2)
+
+
+
 
 

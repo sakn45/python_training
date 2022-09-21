@@ -5,7 +5,7 @@ from model.contact import Contact
 
 class DbFixture:
 
-    def __init__(self,host, name, user, password):
+    def __init__(self, host, name, user, password):
         self.host = host
         self.name = name
         self.user = user

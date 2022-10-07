@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="11" time="15.823" timestamp="2022-10-07T17:25:24.654192" hostname="LAPTOP-EE5QKHPK"><testcase classname="test.test_add_group" name="test_add_group[None:::]" time="3.926" /><testcase classname="test.test_add_group" name="test_add_group[None:namewxC6F:header&quot;W DVHt!Pjg:footer.9]" time="0.905" /><testcase classname="test.test_add_group" name="test_add_group[None:namebn:header8]|W:C:footerv9DL6Zcz#JNts]" time="0.867" /><testcase classname="test.test_add_group" name="test_add_group[None:name07)  m:headerO\\:footer1G ]" time="0.963"><failure message="assert [32:New group...j, 43:::, ...] == [32:New group...j, 43:::, ...]&#10;  Left contains one more item: None:name07)  m:headerO\:footer1G &#10;  Use -v to get more diff">app = &lt;fixture.application.Application object at 0x0000020F9D10D940&gt;
+db = &lt;fixture.db.DbFixture object at 0x0000020F9D10D8B0&gt;, json_test = None:name07)  m:headerO\:footer1G 
+
+    def test_add_group(app, db, json_test):
+        group = json_test
+        old_groups = db.get_group_list()
+        app.group.create(group)
+        new_groups = db.get_group_list()
+        old_groups.append(group)
+&gt;       assert sorted(old_groups, key=Group.id_or_max) == sorted(new_groups, key=Group.id_or_max)
+E       assert [32:New group...j, 43:::, ...] == [32:New group...j, 43:::, ...]
+E         Left contains one more item: None:name07)  m:headerO\:footer1G 
+E         Use -v to get more diff
+
+test\test_add_group.py:12: AssertionError</failure></testcase><testcase classname="test.test_add_group" name="test_add_group[None:name%+AuvN2V:headerX)Iw Bb?JNc cE*($:footerSw Jv]" time="0.942" /><testcase classname="test.test_add_group" name="test_add_group[None:namef:headerK X  Xd[}:footer5/0[nm &amp; w.{t`]" time="0.908" /><testcase classname="test.test_add_group" name="test_add_group[None:name/:headerPO.=0:]4+# f+Ar|36&amp;:footer &lt;,X{g.]" time="0.947" /><testcase classname="test.test_add_group" name="test_add_group[None:namec_ Jc~:headerqO:footerKFiv7EvS]" time="0.868" /><testcase classname="test.test_add_group" name="test_add_group[None:namew){&quot;s:header keGV]pc:footerr$Bu_ BT` ;F]" time="1.042" /><testcase classname="test.test_add_group" name="test_add_group[None:name#{Qt:headerQz=,K(&quot; L:footeriZL-[#VdHL/]" time="0.993" /><testcase classname="test.test_add_group" name="test_add_group[None:nameB.&gt;@?9 O:header`&amp;YYDS :footerl;pB#|&quot;CC&amp;X ]" time="3.260" /></testsuite></testsuites>
